@@ -16,7 +16,7 @@ variable "eksAdminPolicy" {
 }
 
 variable "principalArn" {
-  default = "arn:aws:iam::318849967381:role/LabRole"
+  default = "arn:aws:iam::318849967381:role/voclabs"
 }
 
 variable "cidrBlocks" {
