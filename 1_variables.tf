@@ -32,12 +32,22 @@ variable "rdsHost" {
   type        = string
 }
 
-variable "loadBalancerUri" {
+variable "cognitoIssuerUrl" {
+  description = "Variable passed from GitHub Actions"
+  type        = string
+}
+
+variable "loadBalancerUriPagamentos" {
   description = "Secret passed from GitHub Actions"
   type        = string
 }
 
-variable "cognitoIssuerUrl" {
-  description = "Variable passed from GitHub Actions"
+variable "loadBalancerUriAcompanhamento" {
+  description = "Secret passed from GitHub Actions"
+  type        = string
+}
+
+variable "loadBalancerUriPedidos" {
+  description = "Secret passed from GitHub Actions"
   type        = string
 }
