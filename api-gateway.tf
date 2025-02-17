@@ -39,6 +39,10 @@ resource "aws_apigatewayv2_integration" "tc_eks_api_integration_pagamentos" {
   integration_method = "ANY"
   connection_type    = "VPC_LINK"
   connection_id      = aws_apigatewayv2_vpc_link.tc_vpc_link.id
+
+  request_parameters = {
+    "overwrite:path" = "/$request.path.proxy"
+  }
 }
 
 resource "aws_apigatewayv2_integration" "tc_eks_api_integration_acompanhamento" {
@@ -49,6 +53,10 @@ resource "aws_apigatewayv2_integration" "tc_eks_api_integration_acompanhamento" 
   integration_method = "ANY"
   connection_type    = "VPC_LINK"
   connection_id      = aws_apigatewayv2_vpc_link.tc_vpc_link.id
+
+  request_parameters = {
+    "overwrite:path" = "/$request.path.proxy"
+  }
 }
 
 resource "aws_apigatewayv2_integration" "tc_eks_api_integration_pedidos" {
@@ -59,6 +67,10 @@ resource "aws_apigatewayv2_integration" "tc_eks_api_integration_pedidos" {
   integration_method = "ANY"
   connection_type    = "VPC_LINK"
   connection_id      = aws_apigatewayv2_vpc_link.tc_vpc_link.id
+
+  request_parameters = {
+    "overwrite:path" = "/$request.path.proxy"
+  }
 }
 
 resource "aws_apigatewayv2_route" "all_pagamentos" {
@@ -71,13 +83,13 @@ resource "aws_apigatewayv2_route" "all_pagamentos" {
 resource "aws_apigatewayv2_route" "all_pedidos" {
   api_id = aws_apigatewayv2_api.tc_api_gateway.id
 
-  route_key = "ANY /acompanhamento/{proxy+}"
+  route_key = "ANY /pedidos/{proxy+}"
   target    = "integrations/${aws_apigatewayv2_integration.tc_eks_api_integration_pedidos.id}"
 }
 
 resource "aws_apigatewayv2_route" "all_acompanhamento" {
   api_id = aws_apigatewayv2_api.tc_api_gateway.id
 
-  route_key = "ANY /pedidos/{proxy+}"
+  route_key = "ANY /acompanhamento/{proxy+}"
   target    = "integrations/${aws_apigatewayv2_integration.tc_eks_api_integration_acompanhamento.id}"
 }
