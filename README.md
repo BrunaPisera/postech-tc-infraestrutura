@@ -2,30 +2,22 @@
 <img src="https://github.com/user-attachments/assets/208a0ebb-ca7c-4b0b-9f68-0b35050a9880" width="30%" />
 </div>
 
-# Lanchonete do Bairro - Infraestrutura AWS (POS TECH: TECH CHALLENGE - 3a FASE)🚀
+# Lanchonete do Bairro - Infraestrutura (POS TECH: TECH CHALLENGE - 4a FASE):rocket:
 
-Este é o repositório responsável pela infraestrutura base e infraestrutura Kubernetes do sistema na nuvem AWS.
+Seja bem vindo! Este é um desafio proposto pela PósTech (Fiap + Alura) na quarta fase da pós graduação de Software Architecture (8SOAT).
+
+:vhs: Vídeo de demonstração do projeto desta fase: em produção
 
 Integrantes do grupo:<br>
 Alexis Cesar (RM 356558)<br>
 Bruna Gonçalves (RM 356557)
 
-## Subindo a infraestrutura com Terraform Manualmente
-Passos necessários para subir a infraestrutura base na nuvem da AWS de forma manual.
+Este é um repositório com o intuito de gerenciar a infraestrutura do sistema de lanchonete na nuvem da AWS utilizando Terraform.
 
-Requisitos:
-- AWS CLI instalada;
-- Terraform instalado;
-- Credenciais AWS configuradas;
-- Subir a infraestrutura com Terraform: ```terraform apply```
-
-## Subindo a infraestrutura Kubernetes no EKS Manualmente
-Passos necessários para subir a infraestrutura kubernetes no EKS de forma manual.
-
-Requisitos:
-- Infraestrutura AWS rodando;
-- Helm instalado;
-- Kubectl instalado;
-- Powershell instalado;
-- Kubectl atualizado para interagir com o eks: ```aws eks update-kubeconfig --region us-east-1 --name eks_lanchonete-do-bairro```
-- Executar o script ```runApplicationK8s.ps1```
+:information_source: Este repositório faz parte de um conjunto de repositórios (outros serviços, infraestrutura e banco de dados) que formam um sistema de lanchonete. Link de todos os repositórios envolvidos:
+- [Infraestrutura AWS](https://github.com/BrunaPisera/postech-tc-infraestrutura)
+- [Serviço de Pedidos](https://github.com/BrunaPisera/postech-tc-pedidos)
+- [Serviço de Acompanhamento](https://github.com/BrunaPisera/postech-tc-acompanhamento)
+- [Serviço de Pagamentos](https://github.com/BrunaPisera/postech-tc-pagamentos)
+- [Banco de Dados](https://github.com/BrunaPisera/postech-tc-dbs)
+- [Função AWS Lambda](https://github.com/BrunaPisera/postech-tc-lambda)
